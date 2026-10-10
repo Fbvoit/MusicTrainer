@@ -69,17 +69,18 @@ const modes = {
 
     mode6: [
         {
-            type: "list",
-            lists:["list3"]
+            type: "combination",
+            lists:["list5", "list9"]
         },
 
         {
-            type: "list",
-            lists:["list3"]
+            type: "combination",
+            lists:["list5", "list9"]
         },
+        
         {
-            type: "list",
-            lists:["list3"]
+            type: "combination",
+            lists:["list5", "list9"]
         }
     ]
 
