@@ -3,6 +3,9 @@ const generateButton = document.getElementById("generateButton");
 const positionsElement = document.getElementById("positions");
 const timerInput = document.getElementById("timerInput");
 const timerButton = document.getElementById("timerButton");
+const questionCountElement = document.getElementById("questionCount");
+
+let questionCount = 1;
 
 let timerId = null;
 
@@ -36,44 +39,40 @@ function createPositionItems(position) {
 
 
 function initializeMode() {
-
     const modeName = modeSelect.value;
     const mode = modes[modeName];
-
 
     state.positions = mode.map(position => ({
         items: createPositionItems(position),
         index: 0
     }));
 
+    questionCount = 1;
 
     render();
 }
 
 
 function next() {
-
     state.positions.forEach(position => {
-
         position.index++;
 
         if (position.index >= position.items.length) {
-
             position.items = shuffle(position.items);
             position.index = 0;
         }
-
     });
 
+    questionCount++;
 
     render();
 }
 
 
 function render() {
+    questionCountElement.textContent = questionCount;
 
     positionsElement.innerHTML = "";
-
 
     state.positions.forEach((position, index) => {
 

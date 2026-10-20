@@ -144,3 +144,9 @@ body {
 
     text-align: center;
 }
+
+.question-counter {
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #777;
+}
